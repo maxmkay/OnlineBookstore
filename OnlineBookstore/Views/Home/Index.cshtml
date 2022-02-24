@@ -4,20 +4,14 @@
 
 @model BooksViewModel
 
-<h1 class="m-2">Book Store</h1>
+
 <div class="container p-3 ">
     @foreach (Books x in Model.Books)
     {
-        <h3>@x.Title</h3>
-
-        <ul>
-            <li>Author: @x.Author</li>
-
-            <li>Catagory: @x.Category</li>
-        </ul>
+        <partial name="BookSummary" model="x" />
     }
 
 </div>
 
 
-<div class="btn" page-blah="@Model.PageInfo" page-action="Index"></div>
+<div class="btn-group pull-right m-1" page-class="btn" page-blah="@Model.PageInfo" page-action="Index" page-class-normal="btn-outline-dark" page-class-enabled="true" page-class-selected="btn-primary"></div>
