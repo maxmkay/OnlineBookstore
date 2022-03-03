@@ -21,11 +21,15 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Categories\" />
     <None Remove="Pages\" />
+    <None Remove="Views\Kart\" />
+    <None Remove="Views\Shared\Components\KartSummary\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Categories\" />
     <Folder Include="Pages\" />
+    <Folder Include="Views\Kart\" />
+    <Folder Include="Views\Shared\Components\KartSummary\" />
   </ItemGroup>
 </Project>

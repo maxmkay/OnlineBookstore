@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,7 @@ namespace OnlineBookstore
                options.UseSqlite(Configuration["ConnectionStrings:BooksDBConnection"]);
            });
 
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
             services.AddScoped<IBookStoreRepository, EFBookstoreRepository>();
 
             services.AddRazorPages();
@@ -39,6 +41,8 @@ namespace OnlineBookstore
             services.AddDistributedMemoryCache();
             services.AddSession();
 
+            services.AddScoped<Kart>(x => SessionKart.GetKart(x));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
            
         }
 
