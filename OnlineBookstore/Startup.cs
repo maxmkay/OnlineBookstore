@@ -43,6 +43,9 @@ namespace OnlineBookstore
 
             services.AddScoped<Kart>(x => SessionKart.GetKart(x));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddServerSideBlazor();
+
            
         }
 
@@ -84,11 +87,15 @@ namespace OnlineBookstore
                    pattern: "{bookCategory}",
                    defaults: new { Controller = "Home", action = "Index", pageNum = 1 });
 
-                
+
 
                 endpoints.MapDefaultControllerRoute();
 
                 endpoints.MapRazorPages();
+
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
+
             });
         }
     }

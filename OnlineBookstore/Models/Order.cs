@@ -34,8 +34,8 @@ namespace OnlineBookstore.Models
         [Required(ErrorMessage = "Please enter phone number")]
         public string PhoneNumber { get; set; }
 
-
-
+        [BindNever]
+        public bool OrderReceived { get; set; }
 
     }
 }

@@ -23,6 +23,7 @@
     <None Remove="Pages\" />
     <None Remove="Views\Kart\" />
     <None Remove="Views\Shared\Components\KartSummary\" />
+    <None Remove="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Components\" />
@@ -31,5 +32,6 @@
     <Folder Include="Pages\" />
     <Folder Include="Views\Kart\" />
     <Folder Include="Views\Shared\Components\KartSummary\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
 </Project>
