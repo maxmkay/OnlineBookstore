@@ -35,7 +35,8 @@ namespace OnlineBookstore.Models
         public string PhoneNumber { get; set; }
 
         [BindNever]
-        public bool OrderReceived { get; set; }
+        [Required]
+        public bool OrderReceived { get; set; } = false;
 
     }
 }
